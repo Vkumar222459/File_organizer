@@ -2,6 +2,10 @@ let path=require("path");
 let fs=require("fs");
 
 function viewExecutor(dirPath, mode){
+    if(!fs.existsSync(dirPath)) {
+        console.log("Directory Doesn't Exist");
+        return;
+    }
     switch(mode){
         case "tree":
             viewTree(dirPath, "");

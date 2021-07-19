@@ -27,6 +27,10 @@ function checkFileTypes(filePath){
 }
 
 function organize(dirPath){
+    if(!fs.existsSync(dirPath)) {
+        console.log("Directory Doesn't Exist");
+        return;
+    }
     let pathorg=path.join(dirPath,"Organized_Folders");
     if(!fs.existsSync(pathorg)){
         fs.mkdirSync(pathorg);
