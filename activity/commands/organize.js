@@ -15,15 +15,10 @@ function isFileChecker(dirPath){
 
 function checkFileTypes(filePath){
     let ext=path.extname(filePath);
-    // console.log(path.basename(filePath)+" : "+ ext);
     for(let key in type.types){
-        // console.log(types.);
-        // console.log(type.types[key]);
 
         for(let i=0;i<type.types[key].length;i++){
-            // console.log(types[key][i]);
             if(ext == type.types[key][i]){
-                // console.log(ext+":"+ types[key][i]);
                 return key;
             }
         }
