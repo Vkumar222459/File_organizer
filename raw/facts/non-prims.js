@@ -34,7 +34,7 @@ let cap={
 
 // loop for traversing
 for(let key in cap){
-    // console.log("key : ", key, "| value : ", cap[key]);
+    console.log("key : ", key, "| value : ", cap[key]);
     // console.log("key : ", key, "| value : ", cap.key);
 }
 

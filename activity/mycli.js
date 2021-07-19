@@ -18,7 +18,7 @@ switch(cmd){
         viewFn(dirPath, input[1]);
         break;
     case "organize":
-        organizeFn();
+        organizeFn(dirPath);
         break;
     case "help":
         helpFn();

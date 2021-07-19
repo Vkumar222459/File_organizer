@@ -29,7 +29,7 @@ function readContent(dirPath){
 function viewTree(dirPath, indent){
     let isFile=isFileChecker(dirPath);
     if(isFile){
-        console.log(indent+dirPath+"*");
+        console.log(indent+path.basename(dirPath)+"*");
     }else{
         console.log(indent+dirPath);
         let children = readContent(dirPath);
@@ -47,7 +47,7 @@ function viewFlat(dirPath){
         console.log(dirPath);
         let children = readContent(dirPath);
         for(let i=0;i<children.length;i++){
-            viewFlat(path.join(dirPath, children[i]), indent+"\t");
+            viewFlat(path.join(dirPath, children[i]));
         }
     }
 }
