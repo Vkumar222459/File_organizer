@@ -4,19 +4,18 @@
 // help
 // input -> node mycli.js view dirname tree
 // node mycli.js organize dirname
-
 let {viewFn}=require("./commands/view");
 let {helpFn}=require("./commands/help");
 let {organizeFn}=require("./commands/organize");
 
+
 let input=process.argv.slice(2);
-let cmnd=input[0];
-
-
-
-switch(cmnd){
+let cmd=input[0];
+let dirPath = input.slice(1).join(" ");
+switch(cmd){
     case "view":
-        viewFn();
+        dirPath=input.slice(2).join(" ");
+        viewFn(dirPath, input[1]);
         break;
     case "organize":
         organizeFn();

@@ -1,7 +1,7 @@
 // file system -> nodejs modules
 // require the file system module from nodejs
 let fs=require("fs");
-
+let path=require("path");
 // this function checks whether the directory is file of folder
 function isFIleChecker(dirPath){
     return fs.lstatSync(dirPath).isFile();
@@ -32,4 +32,19 @@ function viewFlat(dirPath){
     }
 }
 
-viewFlat("d10");
+// viewFlat("D:\\java workspace");
+
+function viewTree(dirPath, indent){
+    let isFile = isFIleChecker(dirPath);
+    if(isFile){
+        console.log(indent+path.basename(dirPath));
+    }else{
+        console.log(indent+path.basename(dirPath));
+        let children=readContent(dirPath);
+        for(let i=0;i<children.length;i++){
+            viewTree(path.join(dirPath,children[i]),indent+"\t");
+        }
+    }
+}
+// viewTree("C:\\Users\\VISHAL kUMAR\\OneDrive\\Documents", "");
+viewTree("C:\\Users\\VISHAL kUMAR\\OneDrive\\Desktop\\d10", "");
